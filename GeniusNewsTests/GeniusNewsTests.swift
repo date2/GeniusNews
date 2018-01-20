@@ -1,11 +1,3 @@
-//
-//  GeniusNewsTests.swift
-//  GeniusNewsTests
-//
-//  Created by Akinobu Date on 2018/01/20.
-//  Copyright © 2018年 batumaru. All rights reserved.
-//
-
 import XCTest
 @testable import GeniusNews
 

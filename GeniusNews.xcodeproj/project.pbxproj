@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D98A09E20134B0B002F821D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D98A09C20134B0B002F821D /* RxCocoa.framework */; };
+		4D98A09F20134B0B002F821D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D98A09D20134B0B002F821D /* RxSwift.framework */; };
+		4D98A0A120134C21002F821D /* KeywordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D98A0A020134C21002F821D /* KeywordController.swift */; };
+		4D98A0A5201355DE002F821D /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D98A0A4201355DE002F821D /* NSObject_Rx.framework */; };
+		4D98A0A820136489002F821D /* KeywordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D98A0A720136489002F821D /* KeywordRepository.swift */; };
+		4D98A0AC20136B29002F821D /* KeywordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D98A0AB20136B29002F821D /* KeywordViewModel.swift */; };
 		4DEA136420133FF1003D356C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA136320133FF1003D356C /* AppDelegate.swift */; };
-		4DEA136620133FF1003D356C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA136520133FF1003D356C /* ViewController.swift */; };
 		4DEA136920133FF1003D356C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DEA136720133FF1003D356C /* Main.storyboard */; };
 		4DEA136B20133FF1003D356C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DEA136A20133FF1003D356C /* Assets.xcassets */; };
 		4DEA136E20133FF1003D356C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DEA136C20133FF1003D356C /* LaunchScreen.storyboard */; };
@@ -34,9 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D98A09C20134B0B002F821D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		4D98A09D20134B0B002F821D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		4D98A0A020134C21002F821D /* KeywordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordController.swift; sourceTree = "<group>"; };
+		4D98A0A4201355DE002F821D /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		4D98A0A720136489002F821D /* KeywordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordRepository.swift; sourceTree = "<group>"; };
+		4D98A0AB20136B29002F821D /* KeywordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordViewModel.swift; sourceTree = "<group>"; };
 		4DEA136020133FF1003D356C /* GeniusNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeniusNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEA136320133FF1003D356C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DEA136520133FF1003D356C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DEA136820133FF1003D356C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DEA136A20133FF1003D356C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DEA136D20133FF1003D356C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D98A0A5201355DE002F821D /* NSObject_Rx.framework in Frameworks */,
+				4D98A09E20134B0B002F821D /* RxCocoa.framework in Frameworks */,
+				4D98A09F20134B0B002F821D /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +87,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D98A09B20134B0A002F821D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D98A0A4201355DE002F821D /* NSObject_Rx.framework */,
+				4D98A09C20134B0B002F821D /* RxCocoa.framework */,
+				4D98A09D20134B0B002F821D /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D98A0A620136473002F821D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4D98A0A720136489002F821D /* KeywordRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		4D98A0AA20136B19002F821D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D98A0A020134C21002F821D /* KeywordController.swift */,
+				4D98A0AB20136B29002F821D /* KeywordViewModel.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4DEA135720133FF1003D356C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +121,7 @@
 				4DEA137720133FF1003D356C /* GeniusNewsTests */,
 				4DEA138220133FF1003D356C /* GeniusNewsUITests */,
 				4DEA136120133FF1003D356C /* Products */,
+				4D98A09B20134B0A002F821D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +138,9 @@
 		4DEA136220133FF1003D356C /* GeniusNews */ = {
 			isa = PBXGroup;
 			children = (
+				4D98A0AA20136B19002F821D /* Controller */,
+				4D98A0A620136473002F821D /* Repository */,
 				4DEA136320133FF1003D356C /* AppDelegate.swift */,
-				4DEA136520133FF1003D356C /* ViewController.swift */,
 				4DEA136720133FF1003D356C /* Main.storyboard */,
 				4DEA136A20133FF1003D356C /* Assets.xcassets */,
 				4DEA136C20133FF1003D356C /* LaunchScreen.storyboard */,
@@ -135,6 +177,7 @@
 				4DEA135C20133FF1003D356C /* Sources */,
 				4DEA135D20133FF1003D356C /* Frameworks */,
 				4DEA135E20133FF1003D356C /* Resources */,
+				4D98A09A20134A36002F821D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,13 +297,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D98A09A20134A36002F821D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4DEA135C20133FF1003D356C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DEA136620133FF1003D356C /* ViewController.swift in Sources */,
 				4DEA136420133FF1003D356C /* AppDelegate.swift in Sources */,
+				4D98A0A120134C21002F821D /* KeywordController.swift in Sources */,
+				4D98A0AC20136B29002F821D /* KeywordViewModel.swift in Sources */,
+				4D98A0A820136489002F821D /* KeywordRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +491,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GeniusNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.batumaru.GeniusNews;
@@ -441,6 +509,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GeniusNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.batumaru.GeniusNews;
