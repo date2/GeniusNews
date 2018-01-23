@@ -10,6 +10,13 @@ final class KeywordController: UITableViewController {
     
     private var viewModel: KeywordViewModel!
     
+    var feedNavigationSegue: AnyObserver<FeedViewModel> {
+        return NavigationSegue(
+            fromViewController: self.navigationController,
+            toViewControllerType: FeedViewController.self
+        ).asObserver()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +41,12 @@ final class KeywordController: UITableViewController {
         
         viewModel.clearKeywordTextField.map { "" }
             .bind(to: keywordTextField.rx.text)
+            .disposed(by: rx.disposeBag)
+
+        tableView.rx.itemSelected.asObservable()
+            .withLatestFrom(viewModel.keywords) { $1[$0.row] }
+            .map { FeedViewModel(keyword: $0) }
+            .bind(to: feedNavigationSegue)
             .disposed(by: rx.disposeBag)
     }
     
