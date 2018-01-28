@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-final class KeywordController: UITableViewController {
+final class KeywordViewController: UITableViewController {
     
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var keywordTextField: UITextField!
@@ -43,7 +43,7 @@ final class KeywordController: UITableViewController {
             .bind(to: keywordTextField.rx.text)
             .disposed(by: rx.disposeBag)
 
-        tableView.rx.itemSelected.asObservable()
+        tableView.rx.itemSelected
             .withLatestFrom(viewModel.keywords) { $1[$0.row] }
             .map { FeedViewModel(keyword: $0) }
             .bind(to: feedNavigationSegue)
@@ -51,19 +51,8 @@ final class KeywordController: UITableViewController {
     }
     
     private func confirm(keyword: String) {
-        enum Result: CustomStringConvertible {
-            case ok
-            case cancel
-            
-            var description: String {
-                switch self {
-                case .ok: return "OK"
-                case .cancel: return "Cancel"
-                }
-            }
-        }
-        
-        let actions: [AlertAction<Result>] = [
+
+        let actions: [AlertAction<DefaultConfirmResult>] = [
             AlertAction(style: .default, result: .ok),
             AlertAction(style: .destructive, result: .cancel)
         ]
