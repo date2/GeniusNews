@@ -15,6 +15,28 @@ struct AlertAction<R: CustomStringConvertible> : AlertActionType {
     let result: Result
 }
 
+enum DefaultConfirmResult: CustomStringConvertible {
+    case ok
+    case cancel
+    
+    var description: String {
+        switch self {
+        case .ok: return "OK"
+        case .cancel: return "Cancel"
+        }
+    }
+}
+
+enum DefaultAlertResult: CustomStringConvertible {
+    case ok
+
+    var description: String {
+        switch self {
+        case .ok: return "OK"
+        }
+    }
+}
+
 extension Reactive where Base: UIAlertController {
     
     static func present<Action: AlertActionType, Result: CustomStringConvertible>(
