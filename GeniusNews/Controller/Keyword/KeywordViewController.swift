@@ -48,6 +48,11 @@ final class KeywordViewController: UITableViewController {
             .map { FeedViewModel(keyword: $0) }
             .bind(to: feedNavigationSegue)
             .disposed(by: rx.disposeBag)
+        
+        tableView.rx.itemDeleted
+            .withLatestFrom(viewModel.keywords) { $1[$0.row] }
+            .bind { [unowned self] in self.viewModel.removeKeyword.onNext($0) }
+            .disposed(by: rx.disposeBag)
     }
     
     private func confirm(keyword: String) {

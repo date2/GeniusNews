@@ -19,4 +19,8 @@ final class KeywordRepository {
     static func append(keyword: String) {
         KeywordRepository.keywords = KeywordRepository.keywords.filter { $0 != keyword } + [keyword]
     }
+    
+    static func remove(keyword: String) {
+        KeywordRepository.keywords = KeywordRepository.keywords.filter { $0 != keyword }
+    }
 }

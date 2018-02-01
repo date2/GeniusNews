@@ -9,6 +9,7 @@ final class KeywordViewModel {
     let keywords: Observable<[String]>
     
     let appendKeyword = PublishSubject<String>()
+    let removeKeyword = PublishSubject<String>()
     let clearKeywordTextField = PublishSubject<Void>()
 
     init(keywordText: Observable<String>) {
@@ -24,6 +25,12 @@ final class KeywordViewModel {
             .bind { [unowned self] keyword in
                 KeywordRepository.append(keyword: keyword)
                 self.clearKeywordTextField.onNext(())
+                refreshTrigger.onNext(())
+            }.disposed(by: disposeBag)
+        
+        removeKeyword
+            .bind { keyword in
+                KeywordRepository.remove(keyword: keyword)
                 refreshTrigger.onNext(())
             }.disposed(by: disposeBag)
     }
