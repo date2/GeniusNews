@@ -5,8 +5,7 @@ import NSObject_Rx
 
 final class KeywordViewController: UITableViewController {
     
-    @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var keywordTextField: UITextField!
+    @IBOutlet var keywordRegisterView: KeywordRegisterView!
     
     private var viewModel: KeywordViewModel!
     
@@ -17,20 +16,25 @@ final class KeywordViewController: UITableViewController {
         ).asObserver()
     }
     
+    override var inputAccessoryView: UIView? {
+        return keywordRegisterView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let keywordText = keywordTextField.rx.text.map { $0 ?? "" }.asObservable()
+
+        let keywordText = keywordRegisterView
+            .textField.rx.text.map { $0 ?? "" }.asObservable()
         
         viewModel = KeywordViewModel(keywordText: keywordText)
         
-        registerButton.rx.tap
+        keywordRegisterView.registerButton.rx.tap
             .withLatestFrom(keywordText)
-            .bind { [unowned self] in self.confirm(keyword: $0) }
+            .bind { [unowned self] in self.viewModel.appendKeyword.onNext($0) }
             .disposed(by: rx.disposeBag)
         
         viewModel.registerButtonEnabled
-            .bind(to: registerButton.rx.isEnabled)
+            .bind(to: keywordRegisterView.registerButton.rx.isEnabled)
             .disposed(by: rx.disposeBag)
         
         viewModel.keywords
@@ -40,7 +44,7 @@ final class KeywordViewController: UITableViewController {
             .disposed(by: rx.disposeBag)
         
         viewModel.clearKeywordTextField.map { "" }
-            .bind(to: keywordTextField.rx.text)
+            .bind(to: keywordRegisterView.textField.rx.text)
             .disposed(by: rx.disposeBag)
 
         tableView.rx.itemSelected
@@ -53,21 +57,16 @@ final class KeywordViewController: UITableViewController {
             .withLatestFrom(viewModel.keywords) { $1[$0.row] }
             .bind { [unowned self] in self.viewModel.removeKeyword.onNext($0) }
             .disposed(by: rx.disposeBag)
+        
+        rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+            .bind { [unowned self] _ in self.becomeFirstResponder() }
+            .disposed(by: rx.disposeBag)
     }
     
-    private func confirm(keyword: String) {
-
-        let actions: [AlertAction<DefaultConfirmResult>] = [
-            AlertAction(style: .default, result: .ok),
-            AlertAction(style: .destructive, result: .cancel)
-        ]
-        
-        UIAlertController
-            .rx.present(baseController: self, title: "Confirm", message: "Save \"\(keyword)\"? ", actions: actions)
-            .bind { [unowned self] result in
-                if case .ok = result {
-                    self.viewModel.appendKeyword.onNext(keyword)
-                }
-            }.disposed(by: rx.disposeBag)
+    override var canBecomeFirstResponder: Bool {
+        return true
     }
 }
+
+
+

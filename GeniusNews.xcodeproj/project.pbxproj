@@ -13,6 +13,7 @@
 		4D390BFE201DCCA9007005FE /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D390BFD201DCCA9007005FE /* Web.storyboard */; };
 		4D390C00201DD5B7007005FE /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D390BFF201DD5B7007005FE /* WebViewModel.swift */; };
 		4D390C02201DE2CA007005FE /* RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D390C01201DE2CA007005FE /* RxWebKit.framework */; };
+		4D390C042023130D007005FE /* KeywordRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D390C032023130D007005FE /* KeywordRegisterView.swift */; };
 		4D98A09E20134B0B002F821D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D98A09C20134B0B002F821D /* RxCocoa.framework */; };
 		4D98A09F20134B0B002F821D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D98A09D20134B0B002F821D /* RxSwift.framework */; };
 		4D98A0A120134C21002F821D /* KeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D98A0A020134C21002F821D /* KeywordViewController.swift */; };
@@ -58,6 +59,7 @@
 		4D390BFD201DCCA9007005FE /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		4D390BFF201DD5B7007005FE /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		4D390C01201DE2CA007005FE /* RxWebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxWebKit.framework; path = Carthage/Build/iOS/RxWebKit.framework; sourceTree = "<group>"; };
+		4D390C032023130D007005FE /* KeywordRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordRegisterView.swift; sourceTree = "<group>"; };
 		4D98A09C20134B0B002F821D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		4D98A09D20134B0B002F821D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		4D98A0A020134C21002F821D /* KeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				4D98A0A020134C21002F821D /* KeywordViewController.swift */,
 				4D98A0AB20136B29002F821D /* KeywordViewModel.swift */,
+				4D390C032023130D007005FE /* KeywordRegisterView.swift */,
 			);
 			path = Keyword;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				4DD6A53420177A0B001BDEB8 /* Segue.swift in Sources */,
 				4DAEFD57201C847800CC4656 /* Endpoint.swift in Sources */,
 				4D98A0B52013B335002F821D /* UIAlertController+Extension.swift in Sources */,
+				4D390C042023130D007005FE /* KeywordRegisterView.swift in Sources */,
 				4D98A0A120134C21002F821D /* KeywordViewController.swift in Sources */,
 				4D390BFC201DCC95007005FE /* WebViewController.swift in Sources */,
 				4D390C00201DD5B7007005FE /* WebViewModel.swift in Sources */,
